@@ -1,6 +1,6 @@
 import pytest
 
-from quick_sst.skeleton import fib, main
+from quick_stt.skeleton import fib, main
 
 __author__ = "DavidTelenko"
 __copyright__ = "DavidTelenko"

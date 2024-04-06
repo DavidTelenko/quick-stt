@@ -1,8 +1,8 @@
 =========
-quick-sst
+quick-stt
 =========
 
-This is the documentation of **quick-sst**.
+This is the documentation of **quick-stt**.
 
 .. note::
 
