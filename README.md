@@ -78,6 +78,38 @@ configuration section above will take affect. Generally as in all sane CLI apps
 the parameters you provide in cli itself will take precedence over
 configuration values.
 
+## Installation
+
+For now this package is in too early stage to be published so you only can
+install it from local sources. Thanks to PyScaffold it is as simple as this:
+
+```
+cd quick-stt
+pip install .
+```
+
+After this script will be available by the name `qstt`.
+
+## Examples
+
+Simple transcribe job
+
+```
+qstt my:/audio/file.mp3
+Transcription generation took: 2.66045069694519s
+Hello there this is me talking.
+```
+
+Change transcriber and token from command prompt.
+
+```
+qstt my:/audio/file.mp3 \
+    --transcriber-token asd8fdfa87asdf8 \
+    --transcriber-name assemblyai
+Transcription generation took: 1.71381411445512s
+Hello there this is me talking.
+```
+
 ## Future plans
 
 - Fix GPU issues with whisper model
