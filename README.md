@@ -37,10 +37,7 @@ level = "INFO" # logging level, can be `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRI
 ## CLI Parameters
 
 This is as simple as writing `qstt --help`. Here is the message you will
-receive: Several arguments are not used for now and only those which are
-mentioned in configuration section above will take affect.
-Generally as in all sane CLI apps the parameters you provide in cli itself will
-take precedence over configuration values.
+receive.
 
 ```
 usage: qstt [-h] [--version] [--transcriber-name TRANSCRIBER_NAME] [--transcriber-token TRANSCRIBER_TOKEN]
@@ -75,6 +72,11 @@ options:
   --log-level {DEBUG,INFO,WARNING,ERROR,CRITICAL}
                         Log level
 ```
+
+Several arguments are not used for now and only those which are mentioned in
+configuration section above will take affect. Generally as in all sane CLI apps
+the parameters you provide in cli itself will take precedence over
+configuration values.
 
 ## Future plans
 
