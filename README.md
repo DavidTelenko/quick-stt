@@ -22,6 +22,7 @@ Example configuration file:
 [transcriber]
 name = "whisper" # the name of the transcriber to use, for now can be `whisper` or `assemblyai`
 token = "your-api-token" # the api token for the transcriber if needed
+dir = "models dir" # defaults to <config-path>/models
 
 [model]
 name = "base" # particular model to use, customization point for each model
@@ -33,7 +34,57 @@ device = "cpu" # device to use for inference, can be `cpu` or `gpu`
 level = "INFO" # logging level, can be `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL`
 ```
 
-# Note
+## CLI Parameters
+
+This is as simple as writing `qstt --help`. Here is the message you will
+receive: Several arguments are not used for now and only those which are
+mentioned in configuration section above will take affect.
+Generally as in all sane CLI apps the parameters you provide in cli itself will
+take precedence over configuration values.
+
+```
+usage: qstt [-h] [--version] [--transcriber-name TRANSCRIBER_NAME] [--transcriber-token TRANSCRIBER_TOKEN]
+            [--preprocess-speed PREPROCESS_SPEED] [--preprocess-pitch PREPROCESS_PITCH] [--model-dir MODEL_DIR] [--model-name MODEL_NAME]
+            [--model-device {cpu,gpu}] [--log-level {DEBUG,INFO,WARNING,ERROR,CRITICAL}]
+            audio_file
+
+Quick SST
+
+positional arguments:
+  audio_file            Path to the audio file to transcribe
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --transcriber-name TRANSCRIBER_NAME
+                        Name of the transcriber to use, it can be default transcriber for `whisper` or `assemblyai` or a custom transcriber. A
+                        custom transcriber is loaded from <config-directory>/plugins. For detailed description of how to write own transcriber
+                        check docs.
+  --transcriber-token TRANSCRIBER_TOKEN
+                        API token for the transcriber. In case of defalut transcribers necessary only for `assemblyai`
+  --preprocess-speed PREPROCESS_SPEED
+                        Speed factor for preprocessing
+  --preprocess-pitch PREPROCESS_PITCH
+                        Pitch factor for preprocessing
+  --model-dir MODEL_DIR
+                        Directory to save model files
+  --model-name MODEL_NAME
+                        Name of the model to use
+  --model-device {cpu,gpu}
+                        Device to use for the model
+  --log-level {DEBUG,INFO,WARNING,ERROR,CRITICAL}
+                        Log level
+```
+
+## Future plans
+
+- Fix GPU issues with whisper model
+- Make it faster
+- Make it work with audio streams and binary data
+- Create plugin system, and give users ability to write their own transcribers
+- Make CLI more beautiful
+
+## Note
 
 This project has been set up using PyScaffold 4.5. For details and usage
 information on PyScaffold see https://pyscaffold.org/.
