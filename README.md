@@ -94,18 +94,20 @@ After this script will be available by the name `qstt`.
 
 Simple transcribe job
 
-```
-qstt my:/audio/file.mp3
+```bash
+> qstt my:/audio/file.mp3
+
 Transcription generation took: 2.66045069694519s
 Hello there this is me talking.
 ```
 
 Change transcriber and token from command prompt.
 
-```
-qstt my:/audio/file.mp3 \
+```bash
+> qstt my:/audio/file.mp3 \
     --transcriber-token asd8fdfa87asdf8 \
     --transcriber-name assemblyai
+
 Transcription generation took: 1.71381411445512s
 Hello there this is me talking.
 ```
