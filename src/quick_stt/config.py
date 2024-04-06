@@ -48,7 +48,7 @@ def default_config() -> dict:
             "pitch": 1.0,
         },
         "model": {
-            "name": "openai/whisper-base",
+            "name": "base",
             "device": "cpu",
         },
         "log": {
