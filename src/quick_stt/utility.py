@@ -1,5 +1,6 @@
 import time
 import functools as ft
+import sys
 
 
 def flatten_dict(d: dict, parent_key: str = "", sep: str = "_") -> dict:
@@ -11,6 +12,13 @@ def flatten_dict(d: dict, parent_key: str = "", sep: str = "_") -> dict:
         else:
             items.append((new_key, v))
     return dict(items)
+
+
+def print_time(time):
+    print(
+        f"Transcription generation took: {time}s",
+        file=sys.stderr,
+    )
 
 
 def time_this(to):
